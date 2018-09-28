@@ -25,13 +25,15 @@ function(){
 
 $(document).ready(function(){
     //aqui con la palabra reservada var, guardamos las secciones de nuestro html
-    var juego = $("#juego");
+    var  juego = $("#juego");
     var felicitaciones = $("#felicitaciones");
     var fallaste = $("#fallaste");
     var jugar = $("#jugar");
     var inicio = $("#inicio");
     var vocalJuego = $("#vocalJuego");
     var muestraAlternativa =$("#muestraAlternativa");
+    var vocalA ="<img id='A' src='item_muestra/A.png' alt=''>";
+    $("#A").css("background-repeat","!no-repeat");
     //aqui declaramos que partes se mantendra ocultas hasta que ocurra algo
     juego.hide();
     felicitaciones.hide();
@@ -44,8 +46,8 @@ $(document).ready(function(){
     y las vocales que mostrara el perrito. recuerda que los arrays son listas de cosas separadas por comas.
     */
 
-    var vocalPerro = new Array('A','E','I','O','U');
-    var vocalAlternativa = new Array('A','E','I','O','U');
+    var  vocalPerro = new Array(vocalA,'E','I','O','U');
+    var vocalAlternativa = new Array('U','O','I','E',vocalA);
 
     /*como repaso recuerda que los objetos en Javascript y en cualquier otro lenguaje
     se comienza a contar desde 0 como posicion inicial.
@@ -100,12 +102,12 @@ $(document).ready(function(){
         /*Ahora lo que falta seria mostrar la alternativa no? se hace de la misma manera que lo hicimos con la vocal para el perro
         tomamos la seccion donde queremos "appendear"(muestraAlternativa) y con .append() colocamos los parrafos/botones/lo quesea html */
 
-        muestraAlternativa.append("<p id='azarUno' class= 'btn'>"+ vocalAlternativaAzar+"</p>");
+        $("#prueba").append("<p id='azarUno'>"+ vocalAlternativaAzar+"</p>");
         /*pero aunque queramos que aparezcan al azar, debemos de colocar si o si una que coincida con la vocal que muestra el perro, asi que
         usaremos la misma variable quee contiene la formula del perro("vocalAlAzar") y la usaremos aqui*/
         var vocalAlternativaAzarDos = vocalAlternativa[vocalAlAzar];
         /* y lo appendeamos de la misma manera que hicimos anteriormente*/
-        muestraAlternativa.append("<p id='azarDos' class= 'btn'>"+ vocalAlternativaAzarDos +"</p>");
+        $("#prueba2").append("<p id='azarDos'>"+ vocalPerroAzar +"</p>");
 
         /*si recargas tienes ya tienes alternativas dinamicas y ademas una vocal dinamica, con esto tenemos 60% de la funcion del juego hecha.
         ahora vienen la funcion clave. la de si pasa o no pasa.
@@ -147,7 +149,7 @@ $(document).ready(function(){
         //dando la funcion click al segundo boton
         botonAlternativaDos.click(function(){
         //console.log(vocalAlternativaAzarDos);
-        if(vocalAlternativaAzarDos==vocalPerroAzar){
+        if(vocalPerroAzar==vocalPerroAzar){
             console.log("esta bueno")
             juego.hide();
             felicitaciones.show()
@@ -183,5 +185,6 @@ $(document).ready(function(){
 
     });
     
+
 
 });

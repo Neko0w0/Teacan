@@ -1,4 +1,28 @@
-body {
-    background-color:#F3E32B;
+
+#inicio{
+background-color: #389BC7
+};
+
+#pregunta{
+
+    text-align: center;
+    font-family:JollyGood Sans Basic;
+    font-size: 20px;
+    color: #ffffff;
 }
 
+#juego{
+background-image: url('item_muestra/azul.png');
+background-position: center;
+background-size: 100%;
+background-repeat: no-repeat;
+font-family: JollyGood Sans Basic;
+text-align: center;
+color: #ffffff;
+font-size: 35px;
+
+};
+
+#azarUno,#azarDos{
+    display: inline-block !important;
+};
